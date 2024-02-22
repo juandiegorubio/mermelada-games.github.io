@@ -6,16 +6,16 @@ var gl = canvas.getContext('webgl');
 
 var mouse = { x: 0, y: 0 };
 
-var numMetaballs = 30;
+var numMetaballs = 10;
 var metaballs = [];
 
 for (var i = 0; i < numMetaballs; i++) {
-    var radius = Math.random() * 60 + 10;
+    var radius = Math.random() * 120 + 10;
     metaballs.push({
         x: Math.random() * (width - 2 * radius) + radius,
         y: Math.random() * (height - 2 * radius) + radius,
-        vx: (Math.random() - 0.5) * 3,
-        vy: (Math.random() - 0.5) * 3,
+        vx: (Math.random() - 0.5) * 1,
+        vy: (Math.random() - 0.5) * 1,
         r: radius * 0.75
     });
 }
@@ -54,10 +54,10 @@ sum += (radius * radius) / (dx * dx + dy * dy);
 
 if (sum >= 0.99) {
     // Color base rosado
-    vec3 baseColor = vec3(0.8, 0, 0); // rosado claro
+    vec3 baseColor = vec3(0.7137254901960784, 0, 0); // rosado claro
 
     // Color del borde rojo
-    vec3 borderColor = vec3(1.0, 0.0, 0.0); // rojo
+    vec3 borderColor = vec3(0.6588235294117647, 0.0, 0.0); // rojo
 
     // Calculamos el factor de mezcla basado en la distancia desde el borde
     float borderFactor = max(0.0, 1.0 - (sum - 0.99) * 100.0);
@@ -70,7 +70,7 @@ if (sum >= 0.99) {
     return;
 }
 
-gl_FragColor = vec4(1.0, 0.0, 0.0, 0.0);
+gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
 }
 
 `;
@@ -191,7 +191,7 @@ var addListener = function (e, str, func) {
 addListener(window, "load", init);
 
 function resize() {
-    canvasW = document.getElementById('container').offsetWidth + 40; initCanvas(canvasW, window.innerHeight);
+    canvasW = document.getElementById('container').offsetWidth + 40; initCanvas(canvasW, window.innerHeight - 900);
     var cW = canvas.width;
     var cH = canvas.height;
     for (var i = 0; i < verNum; i++)
@@ -252,9 +252,6 @@ var xx = 150;
 var dd = 15;
 
 function update() {
-    //ctx.rect(50,20,280,620);
-    //ctx.stroke();
-    //ctx.clip();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     autoDiff -= autoDiff * 0.9;
     diffPt[xx] = autoDiff;
@@ -279,8 +276,8 @@ function update() {
 
 }
 
-var color1 = "#EE4B2B";
-var color2 = "#FF0000";
+var color1 = "#B6020E";
+var color2 = "#A8000D";
 function draw() {
     ctx.beginPath();
     ctx.moveTo(0, window.innerHeight);
@@ -326,17 +323,4 @@ Vertex.prototype.updateY = function (diffVal) {
     this.vy += this.targetY - this.y
     this.y += this.vy * this.friction;
     this.vy *= this.deceleration;
-}
-var blue = function () {
-    color1 = "#6ca0f6";
-    color2 = "#367aec";
-}
-var black = function () {
-    color1 = "#595959";
-    color2 = "#000000";
-}
-
-var purple = function () {
-    color1 = "#ff92ec";
-    color2 = "#f727d2";
 }
