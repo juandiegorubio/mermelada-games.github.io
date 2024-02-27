@@ -185,3 +185,92 @@ window.addEventListener('resize', function () {
         });
     }
 });
+
+
+
+
+var currentIndex = 0;
+var contentTypes = ['image', 'video', 'gallery'];
+
+function changeContent(index) {
+    currentIndex = index;
+    displayContent();
+    updateDots();
+}
+
+function updateDots() {
+    var dots = document.querySelectorAll('.dot');
+    dots.forEach(function (dot, index) {
+        if (index === currentIndex) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+function displayContent() {
+    var contentType = contentTypes[currentIndex];
+    if (contentType === 'image') {
+        document.getElementById('project-img').style.display = 'block';
+        document.getElementById('project-video').style.display = 'none';
+        document.getElementById('gallery').style.display = 'none';
+        document.getElementById('project-video').pause();
+    } else if (contentType === 'video') {
+        document.getElementById('project-img').style.display = 'none';
+        document.getElementById('project-video').style.display = 'block';
+        document.getElementById('gallery').style.display = 'none';
+        document.getElementById('project-video').play();
+    } else if (contentType === 'gallery') {
+        document.getElementById('project-img').style.display = 'none';
+        document.getElementById('project-video').style.display = 'none';
+        document.getElementById('gallery').style.display = 'grid';
+        document.getElementById('project-video').pause();
+    }
+}
+
+displayContent();
+
+
+var dots = document.querySelectorAll('.dot');
+
+var currentIndex = 0;
+
+function updateDots() {
+    dots.forEach(function (dot, index) {
+        if (index === currentIndex) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+updateDots();
+
+function previewImage(imageSrc) {
+    var modal = document.getElementById('previewModal');
+    var previewImage = document.getElementById('previewImage');
+    previewImage.src = imageSrc;
+    modal.style.display = 'block';
+}
+
+function closePreviewModal() {
+    var modal = document.getElementById('previewModal');
+    modal.style.display = 'none';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -52,7 +52,20 @@
                 "Best Game" prize.</p>
             </div>
             <div class="project-image">
-                <img src="mind.png" alt="Foto del proyecto">
+                <img id="project-img" src="mind.png"  onclick="previewImage(this.src)" alt="Foto del proyecto">
+                <video id="project-video" src="mind.mp4" muted loop controls style="display: none;"></video>
+                <div id="gallery" class="gallery">
+                    <img src="mind.png" onclick="previewImage(this.src)" alt="Image 1">
+                    <img src="mind.png" onclick="previewImage(this.src)" alt="Image 2">
+                    <img src="mind.png" onclick="previewImage(this.src)" alt="Image 3">
+                    <img src="mind.png" onclick="previewImage(this.src)" alt="Image 4">
+                </div>
+                <div class="button-container">
+                    <span class="dot" onclick="changeContent(0)"></span>
+                    <span class="dot" onclick="changeContent(1)"></span>
+                    <span class="dot" onclick="changeContent(2)"></span>
+                </div>
+
             </div>
         </div>
     </section>
@@ -67,6 +80,11 @@
         <p>© 2024 Mermelada Games</p>
         <p>mermeladagames@gmail.com</p>
     </footer>
+
+    <div id="previewModal" class="modal">
+        <span class="close" onclick="closePreviewModal()">&times;</span>
+        <img id="previewImage" class="modal-content">
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
