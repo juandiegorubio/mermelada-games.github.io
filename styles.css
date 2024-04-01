@@ -1,12 +1,12 @@
 * {
     text-decoration: none;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: 'Coiny', sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #A8000D;
 }
 
@@ -272,8 +272,8 @@ section h2 {
     align-items: center;
   }
   .container .card .sci li a {
-    color: rgba(138, 57, 10, 0.534);
-    font-size: 24px;
+    color:  rgba(177, 0, 0, 0.671);
+    font-size: 32px;
   }
   
   .container .card:hover .sci li {
@@ -290,8 +290,8 @@ section h2 {
   }
 
   .container .card .sci li a:hover {
-    color: rgb(138, 57, 10);
-    font-size: 24px;
+    color:  rgb(177, 0, 0);
+    font-size: 32px;
   }
 .about p {
     font-size: 30px;
