@@ -147,7 +147,7 @@ canvas {
 }
 
 .home a:hover i {
-    color: rgb(100, 255, 218);
+    color: rgb(255, 80, 80);
 }
 
 .home .content {
@@ -158,14 +158,12 @@ canvas {
 }
 
 .about {
-    text-align: left;
-    padding-left: 120px;
+    text-align: center;
     margin-bottom: 200px;
 }
 
 .about .content {
     display: inline-block;
-    text-align: left;
     color: white;
     max-width: 600px;
 }
@@ -173,11 +171,14 @@ canvas {
 .about h1 {
     font-size: 32px;
     margin-bottom: 10px;
+    justify-content: center;
+    display: flex;
 }
 
 .about p {
     font-size: 16px;
     word-wrap: break-word;
+    text-align: justify;
 }
 
 .modal {
