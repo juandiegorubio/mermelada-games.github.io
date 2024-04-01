@@ -17,14 +17,15 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    background-color: #00ffea;
+    background-color: #00000079;
     padding: 20px 120px;
-    border-bottom: 10px solid #7e4300;
+    /* border-bottom: 10px solid #7e4300; */
     z-index: 1000;
 }
 
 header .name {
     font-size: 20px;
+    color: #ffffff;
     font-weight: bold;
 }
 
@@ -35,7 +36,7 @@ header .nav-links {
 
 .nav-links a {
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
     position: relative;
     overflow: hidden;
     transition: color 0.3s ease-out;
@@ -48,14 +49,14 @@ header .nav-links {
     left: 50%;
     width: 0;
     height: 2px;
-    background-color: red;
+    background-color: rgb(168, 0, 0);
     transition: width 0.3s ease-out, left 0.3s ease-out;
     transform-origin: center;
     transform: scaleX(0);
 }
 
 .nav-links a:hover {
-    color: red;
+    color: rgb(168, 0, 0);
 }
 
 .nav-links a:hover::after {
