@@ -18,15 +18,26 @@ header {
     display: flex;
     justify-content: space-between;
     background-color: #00000079;
-    padding: 20px 120px;
+    padding: 20px 20px;
     /* border-bottom: 10px solid #7e4300; */
     z-index: 1000;
+    
+}
+header img
+{
+    height:45px;
+    margin-right: 10px;
+    float: left;
+    width: auto;
+    /* background-color: #ff0015; */
 }
 
 header .name {
-    font-size: 20px;
+    font-size: 30px;
     color: #ffffff;
     font-weight: bold;
+    /* background-color: #2600ff; */
+
 }
 
 header .nav-links {
