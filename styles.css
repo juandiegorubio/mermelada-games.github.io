@@ -25,7 +25,7 @@ header {
 }
 header img
 {
-    height:45px;
+    height:36px;
     margin-right: 10px;
     float: left;
     width: auto;
@@ -33,7 +33,7 @@ header img
 }
 
 header .name {
-    font-size: 30px;
+    font-size: 24px;
     color: #ffffff;
     font-weight: bold;
     /* background-color: #2600ff; */
@@ -42,6 +42,7 @@ header .name {
 
 header .nav-links {
     display: flex;
+    align-items: center;
     gap: 30px;
 }
 
@@ -261,7 +262,7 @@ aside {
 }
 
 .aside-icons a:hover {
-    color: rgb(100, 255, 218);
+    color: rgb(255, 106, 106);
 }
 
 footer {
@@ -291,22 +292,33 @@ footer p {
     transition: all 0.55s ease;
 }
 
+.projects h1 {
+    font-size: 32px;
+    margin-bottom: 100px;
+    justify-content: center;
+    display: flex;
+}
 
 .flexing {
     background: #efefef00;
-   margin-bottom: 200px;
-   margin-left: 100px;
-   margin-right: 100px;
+    margin-bottom: 200px;
+    margin-left: 100px;
+    margin-right: 100px;
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 500px;
     max-width: 100%;
-  }
- img{
+}
+img{
    width: 100%;
-   height: 100%;
+   height: auto;
+   border-radius: 12px;
  }
+ video{
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
  .flex, .flex2{
    display: flex;
    flex-direction: column;
@@ -315,6 +327,16 @@ footer p {
 
  .flexing .flex2 h2,p{
     text-align: right;  
+ }
+
+ .flexing h2{
+    font-size: 40px;
+    line-height: 0;
+ }
+
+ .flexing p{
+    font-size: 18px;
+    color: white;
  }
 
  .flexing .flex p{
