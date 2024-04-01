@@ -17,10 +17,11 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    background-color: #00000079;
+    background: rgba(0, 0, 0, 0.55);
     padding: 20px 20px;
     /* border-bottom: 10px solid #7e4300; */
     z-index: 1000;
+    
     
 }
 header img
@@ -88,18 +89,16 @@ canvas {
 
 .home {
     position: relative;
-    margin-top: 300px;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 200px;
 }
 
 .home h1 {
-    font-size: 120px;
+    font-size: 200px;
     font-weight: 400;
     letter-spacing: 1px;
     line-height: 1.5;
@@ -123,13 +122,14 @@ canvas {
     align-items: center;
     margin-right: 5px;
     color: rgb(243, 246, 255);
-    font-size: 50px;
+    font-size: 200px;
     text-decoration: none;
-    margin-top: 120px;
+    display: inline-block;
 }
 
 .home a i {
     transition: color 400ms ease;
+    display: inline-block;
     animation: arrowAnimation 1s ease-in-out infinite;
 }
 
@@ -148,14 +148,12 @@ canvas {
 }
 
 .home a:hover i {
-    color: rgb(255, 80, 80);
+    color: rgb(0, 0, 0, 0.5);
 }
 
 .home .content {
-    position: relative;
     z-index: 1;
     text-align: center;
-    margin-top: -8%;
 }
 
 .about {
@@ -163,23 +161,21 @@ canvas {
     margin-bottom: 200px;
 }
 
-.about .content {
-    display: inline-block;
-    color: white;
-    max-width: 600px;
-}
-
 .about h1 {
-    font-size: 32px;
+    font-size: 50px;
     margin-bottom: 10px;
     justify-content: center;
     display: flex;
+    color:#ffffff;
 }
 
+
 .about p {
-    font-size: 16px;
+    font-size: 30px;
     word-wrap: break-word;
     text-align: justify;
+    padding: 0 100px;
+    color:#ffffff;
 }
 
 .modal {
@@ -268,46 +264,50 @@ aside {
 footer {
     bottom: 0;
     width: 100%;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 33px 9%;
-    background: white;
+    background: rgba(0, 0, 0, 0.75);
 }
 
 footer a {
-    color: black;
+    color: rgb(255, 255, 255);
     margin-left: 20px;
     font-size: 30px;
     font-weight: 600;
     border-bottom: 2px solid transparent;
     transition: all 0.55s ease;
+    background-color: #999;
 }
 
 footer p {
-    color: black;
+    color: rgb(255, 255, 255);
     margin-left: -40px;
+    font-size: 30px;
     margin-top: 5px;
     border-bottom: 2px solid transparent;
     transition: all 0.55s ease;
 }
 
 .projects h1 {
-    font-size: 32px;
-    margin-bottom: 100px;
+    font-size: 50px;
+    margin-bottom: 10px;
     justify-content: center;
     display: flex;
+    color:#ffffff;
 }
 
 .flexing {
     background: #efefef00;
-    margin-bottom: 200px;
-    margin-left: 100px;
-    margin-right: 100px;
+    margin: 100px 100px;
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr 1fr; 
     max-width: 100%;
+    background-color: #00000079;
+    border-radius: 12px;  
 }
 img{
    width: 100%;
@@ -319,26 +319,37 @@ img{
     height: auto;
     border-radius: 12px;
   }
+
  .flex, .flex2{
    display: flex;
    flex-direction: column;
-   justify-content: center;
  }
 
  .flexing .flex2 h2,p{
-    text-align: right;  
+    text-align: right;
+    font-size: 50px; 
+    margin: 0px;
+    color: #ffffff;
+    padding-right: 10px;
+ }
+
+ .flexing .flex h2,p{ 
+    margin: 0px;
+    font-size: 50px;
+    color: #ffffff;
  }
 
  .flexing h2{
-    font-size: 40px;
-    line-height: 0;
+    font-size: 50px;
  }
 
  .flexing p{
-    font-size: 18px;
+    font-size: 30px;
     color: white;
  }
 
  .flexing .flex p{
     text-align: left;
+    font-size: 30px;
+    margin: 0;
  }
