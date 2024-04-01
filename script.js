@@ -188,50 +188,6 @@ window.addEventListener('resize', function () {
 
 
 
-
-var currentIndex = 0;
-var contentTypes = ['image', 'video', 'gallery'];
-
-function changeContent(index) {
-    currentIndex = index;
-    displayContent();
-    updateDots();
-}
-
-function updateDots() {
-    var dots = document.querySelectorAll('.dot');
-    dots.forEach(function (dot, index) {
-        if (index === currentIndex) {
-            dot.classList.add('active');
-        } else {
-            dot.classList.remove('active');
-        }
-    });
-}
-
-function displayContent() {
-    var contentType = contentTypes[currentIndex];
-    if (contentType === 'image') {
-        document.getElementById('project-img').style.display = 'block';
-        document.getElementById('project-video').style.display = 'none';
-        document.getElementById('gallery').style.display = 'none';
-        document.getElementById('project-video').pause();
-    } else if (contentType === 'video') {
-        document.getElementById('project-img').style.display = 'none';
-        document.getElementById('project-video').style.display = 'block';
-        document.getElementById('gallery').style.display = 'none';
-        document.getElementById('project-video').play();
-    } else if (contentType === 'gallery') {
-        document.getElementById('project-img').style.display = 'none';
-        document.getElementById('project-video').style.display = 'none';
-        document.getElementById('gallery').style.display = 'grid';
-        document.getElementById('project-video').pause();
-    }
-}
-
-displayContent();
-
-
 var dots = document.querySelectorAll('.dot');
 
 var currentIndex = 0;
@@ -262,15 +218,28 @@ function closePreviewModal() {
 
 
 
+"use strict";
 
+function qs(selector, all = false) {
+  return all ? document.querySelectorAll(selector) : document.querySelector(selector);
+}
 
+const homeIcon = qs('a > i.ri-arrow-down-double-line');
+const aboutme = qs('.about');
 
+homeIcon.addEventListener('click', () => {
+    aboutme.scrollIntoView({ behavior: 'smooth' });
+  });
 
+const navLinks = document.querySelectorAll('.nav-links a');
 
+navLinks.forEach(link => {
+  link.addEventListener('click', (event) => {
 
+    event.preventDefault();
 
+    const targetId = link.getAttribute('href').substring(1);
 
-
-
-
-
+    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+  });
+});
